@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Flowchart - Menggoreng Telur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🍳 Game Flowchart Algoritma</h1>
+
+        <div class="question">
+            <h2>📚 Soal</h2>
+
+            <p>
+                Susunlah simbol flowchart berikut menjadi urutan algoritma
+                <b>menggoreng telur</b> yang benar.
+            </p>
+
+            <p>
+                <b>Petunjuk:</b> Gunakan simbol flowchart sesuai dengan fungsinya.
+            </p>
+        </div>
+
+        <div class="game">
+
+            <!-- BLOK YANG DIACAK -->
+            <div class="panel">
+
+                <h2>🧩 Simbol Flowchart</h2>
+
+                <p class="info">
+                    Susun blok ke area sebelah kanan.
+                </p>
+
+                <div id="blocks"></div>
+
+            </div>
+
+
+            <!-- AREA JAWABAN -->
+            <div class="panel">
+
+                <h2>📊 Susun Flowchart</h2>
+
+                <div id="answerArea">
+
+                    <p class="placeholder">
+                        Tarik simbol ke sini...
+                    </p>
+                    9
+                </div>
+
+                <button onclick="checkAnswer()">
+                ✓ Cek Jawaban
+            </button>
+
+                <button class="reset" onclick="resetGame()">
+                🔀 Acak Ulang
+            </button>
+
+                <div id="result"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

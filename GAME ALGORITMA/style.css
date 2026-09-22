@@ -1,0 +1,353 @@
+* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    color: white;
+    /* LATAR BELAKANG LUAR ANGKASA */
+    background: radial-gradient(circle at 20% 20%, white 1px, transparent 2px), radial-gradient(circle at 80% 30%, white 1px, transparent 2px), radial-gradient(circle at 40% 70%, white 1px, transparent 2px), radial-gradient(circle at 70% 80%, white 1px, transparent 2px), radial-gradient(circle at 10% 90%, white 1px, transparent 2px), radial-gradient(circle at 90% 10%, white 1px, transparent 2px), linear-gradient(135deg, #020b3d, #063b88, #071a5c);
+    background-size: 120px 120px, 180px 180px, 150px 150px, 200px 200px, 130px 130px, 170px 170px, 100% 100%;
+    background-attachment: fixed;
+}
+
+
+/* ===================================
+   BINTANG TAMBAHAN
+   =================================== */
+
+body::before,
+body::after {
+    content: "✦  ·  ✧     *       ✦    ·     ✧
+ * ✦ · * ✧ ✦ · * ✦ · ✧ * ✦ ·";
+ position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 22px;
+    line-height: 100px;
+    letter-spacing: 25px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::after {
+    font-size: 12px;
+    opacity: 0.6;
+    transform: rotate(8deg);
+}
+
+
+/* ===================================
+   CONTAINER
+   =================================== */
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+
+/* ===================================
+   JUDUL
+   =================================== */
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #4db8ff, 0 0 20px #147cff, 0 0 35px #0066ff;
+}
+
+
+/* ===================================
+   SOAL
+   =================================== */
+
+.question {
+    background: rgba(4, 29, 91, 0.85);
+    border: 2px solid #269cff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(0, 153, 255, 0.5), inset 0 0 20px rgba(0, 100, 255, 0.15);
+}
+
+.question h2 {
+    margin-bottom: 10px;
+    color: #66d9ff;
+}
+
+.question p {
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+
+/* ===================================
+   GAME
+   =================================== */
+
+.game {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+
+/* ===================================
+   PANEL
+   =================================== */
+
+.panel {
+    background: linear-gradient( 145deg, rgba(5, 48, 120, 0.9), rgba(2, 20, 70, 0.92));
+    padding: 20px;
+    border-radius: 18px;
+    border: 2px solid #238cff;
+    box-shadow: 0 0 20px rgba(0, 140, 255, 0.4), inset 0 0 30px rgba(0, 70, 180, 0.2);
+}
+
+.panel h2 {
+    text-align: center;
+    margin-bottom: 8px;
+    color: #ffffff;
+    text-shadow: 0 0 8px #36b9ff;
+}
+
+.info {
+    text-align: center;
+    color: #bde8ff;
+    margin-bottom: 20px;
+}
+
+
+/* ===================================
+   BLOK FLOWCHART
+   =================================== */
+
+#blocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+
+/* ===================================
+   SEMUA BLOK
+   =================================== */
+
+.flow-block {
+    width: 230px;
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    cursor: grab;
+    user-select: none;
+    position: relative;
+    transition: 0.25s;
+    color: #06143d;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.35);
+}
+
+.flow-block:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.flow-block:active {
+    cursor: grabbing;
+}
+
+
+/* ===================================
+   OVAL
+   MULAI / SELESAI
+   =================================== */
+
+.oval {
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient( 135deg, #75ff9b, #24d96b);
+    border: 3px solid #b8ffd0;
+    box-shadow: 0 0 15px rgba(40, 255, 120, 0.6);
+}
+
+
+/* ===================================
+   PERSEGI PANJANG
+   PROSES
+   =================================== */
+
+.rectangle {
+    height: 75px;
+    background: linear-gradient( 135deg, #ffe878, #ffb52e);
+    border: 3px solid #fff1a8;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(255, 190, 40, 0.5);
+}
+
+
+/* ===================================
+   JAJAR GENJANG
+   INPUT / OUTPUT
+   =================================== */
+
+.parallelogram {
+    height: 75px;
+    background: linear-gradient( 135deg, #70d8ff, #318cff);
+    border: 3px solid #b8ecff;
+    transform: skew(-15deg);
+    padding-left: 18px;
+    padding-right: 18px;
+    color: white;
+    text-shadow: 0 1px 3px #003366;
+    box-shadow: 0 0 15px rgba(50, 180, 255, 0.6);
+}
+
+
+/* ===================================
+   AREA JAWABAN
+   =================================== */
+
+#answerArea {
+    min-height: 520px;
+    border: 3px dashed #4db8ff;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 20, 70, 0.5);
+    box-shadow: inset 0 0 30px rgba(0, 100, 255, 0.15);
+}
+
+.placeholder {
+    color: #82cfff;
+    text-align: center;
+    margin-top: 220px;
+    font-size: 17px;
+}
+
+
+/* ===================================
+   PANAH FLOWCHART
+   =================================== */
+
+#answerArea .flow-block:not(:last-child)::after {
+    content: "↓";
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 10px #38b6ff;
+    z-index: 20;
+}
+
+
+/* ===================================
+   BUTTON
+   =================================== */
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient( 135deg, #00b7ff, #0066ff);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #62d5ff;
+    box-shadow: 0 0 12px rgba(0, 170, 255, 0.5);
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 190, 255, 0.8);
+}
+
+
+/* ===================================
+   BUTTON ACAK ULANG
+   =================================== */
+
+button.reset {
+    background: linear-gradient( 135deg, #7c4dff, #5121c9);
+    border-color: #b9a0ff;
+}
+
+button.reset:hover {
+    background: linear-gradient( 135deg, #936dff, #6538e0);
+}
+
+
+/* ===================================
+   HASIL
+   =================================== */
+
+#result {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+
+/* JAWABAN BENAR */
+
+.success {
+    display: block !important;
+    background: rgba(28, 150, 75, 0.85);
+    border: 2px solid #6cff9b;
+    color: white;
+    box-shadow: 0 0 15px rgba(50, 255, 120, 0.5);
+}
+
+
+/* JAWABAN SALAH */
+
+.error {
+    display: block !important;
+    background: rgba(170, 30, 50, 0.85);
+    border: 2px solid #ff7185;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 50, 80, 0.5);
+}
+
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+
+@media (max-width: 700px) {
+    .game {
+        grid-template-columns: 1fr;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    .flow-block {
+        width: 210px;
+    }
+}
